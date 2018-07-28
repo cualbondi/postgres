@@ -10,3 +10,6 @@ RUN apt-get update \
         postgresql-10-postgis-${POSTGIS_VERSION} \
         postgresql-10-postgis-scripts \
     && rm -rf /var/lib/apt/lists/*
+
+COPY import-sql.sh import-sql.sh
+COPY export-sql.sh export-sql.sh
