@@ -1,14 +1,14 @@
-FROM postgres:10
+FROM postgres:11
 
 MAINTAINER Cualbondi
 
-ENV POSTGIS_VERSION=2.4
+ENV POSTGIS_VERSION=2.5
 
 # Update repositories & Install dependencies
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        postgresql-10-postgis-${POSTGIS_VERSION} \
-        postgresql-10-postgis-scripts \
+        postgresql-11-postgis-${POSTGIS_VERSION} \
+        postgresql-11-postgis-scripts \
     && rm -rf /var/lib/apt/lists/*
 
 COPY import-sql.sh import-sql.sh
