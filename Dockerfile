@@ -8,7 +8,7 @@ ENV POSTGIS_VERSION=2.5
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         postgresql-11-postgis-${POSTGIS_VERSION} \
-        postgresql-11-postgis-scripts \
+        postgresql-11-postgis-${POSTGIS_VERSION}-scripts \
     && rm -rf /var/lib/apt/lists/*
 
 COPY import-sql.sh import-sql.sh
